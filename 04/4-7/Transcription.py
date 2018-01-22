@@ -97,7 +97,7 @@ def knights(saying):
 
 print(knights('Ni!'))
 
-def knights2(syaing):
+def knights2(saying):
     def inner2():
         return "We are the knights who say: '%s' " % saying
     return inner2
@@ -115,4 +115,27 @@ print(edit_story(stairs,enliven))
 print(edit_story(stairs, lambda word: word.capitalize() + '!'))
 
 print(sum(range(1,101)))
+
+def my_range(first=0, last=10, step=1):
+    number = first
+    while number < last:
+        yield number
+        number += step
+
+def document_it(func):
+    def new_function(*args, **kwargs):
+        print('Running function:', func.__name__)
+        print('Positional arguments', args)
+        print('Keyword arguments:', kwargs)
+        result = func(*args, **kwargs)
+        print('Result:', result)
+        return result
+    return new_function
+
+animal = 'fluitbat'
+def print_global():
+    print('inside print_global:',animal)
+print('at the top level:', animal)
+
+a
 
